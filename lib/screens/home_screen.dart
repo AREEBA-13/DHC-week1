@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String email;
+  final String? email;
 
-  const HomeScreen({super.key, required this.email});
+  const HomeScreen({super.key, this.email});
 
   @override
   Widget build(BuildContext context) {
+    // Dynamically retrieve the logged-in email from Firebase Auth if not passed directly
+    final activeEmail = email ?? FirebaseAuth.instance.currentUser?.email ?? 'User';
+    final username = activeEmail.contains('@') ? activeEmail.split('@')[0] : activeEmail;
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -42,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          email.split('@')[0], // Extract username from email
+                          username,
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -111,11 +116,14 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           const Icon(Icons.check_circle, color: Colors.white),
                           const SizedBox(width: 8),
-                          Text(
-                            email,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                          Expanded(
+                            child: Text(
+                              activeEmail,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ],
@@ -171,8 +179,12 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 56,
                   child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
+                    onPressed: () async {
+                      // Perform Firebase sign-out
+                      await FirebaseAuth.instance.signOut();
+                      if (context.mounted) {
+                        Navigator.pop(context);
+                      }
                     },
                     style: OutlinedButton.styleFrom(
                       foregroundColor: const Color(0xFFEF4565),
