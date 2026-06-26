@@ -8,11 +8,11 @@ A premium, modern Flutter application featuring a polished glassmorphic interfac
 
 | Login Screen | Registration Screen | Home / Dashboard |
 | :---: | :---: | :---: |
-| ![Login Screen](screenshots/login.png) | ![Registration Screen](screenshots/signup.png) | ![Home Screen](screenshots/home.png) |
+| ![Login Screen](screenshots/login.jpeg) | ![Registration Screen](screenshots/signup.jpeg) | ![Home Screen](screenshots/home.jpeg) |
 
 > 💡 **How to display your screenshots here:**
 > 1. Create a directory named `screenshots` at the root of your project.
-> 2. Save your screenshots as `login.png`, `signup.png`, and `home.png` in that folder.
+> 2. Save your screenshots as `login.jpeg`, `signup.jpeg`, and `home.jpeg` in that folder.
 > 3. Git add, commit, and push the `screenshots` folder to GitHub. The image table above will automatically load your screenshots on GitHub!
 
 ---
