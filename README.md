@@ -10,10 +10,6 @@ A premium, modern Flutter application featuring a polished glassmorphic interfac
 | :---: | :---: | :---: |
 | ![Login Screen](screenshots/login.jpeg) | ![Registration Screen](screenshots/signup.jpeg) | ![Home Screen](screenshots/home.jpeg) |
 
-> 💡 **How to display your screenshots here:**
-> 1. Create a directory named `screenshots` at the root of your project.
-> 2. Save your screenshots as `login.jpeg`, `signup.jpeg`, and `home.jpeg` in that folder.
-> 3. Git add, commit, and push the `screenshots` folder to GitHub. The image table above will automatically load your screenshots on GitHub!
 
 ---
 
@@ -76,25 +72,6 @@ lib/
 * Flutter SDK (3.0.0 or higher) installed and configured on your machine.
 * A Flutter-compatible IDE (VS Code, Android Studio, etc.) or a connected physical/virtual device.
 
-### Setup Instructions
+### APK Release file
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/AREEBA-13/DHC-week1.git
-   cd week_1
-   ```
-
-2. **Retrieve Dependencies**:
-   ```bash
-   flutter pub get
-   ```
-
-3. **Configure Firebase (Optional/Required for Backend Auth)**:
-   This project is ready-integrated with Firebase. To connect to your own Firebase project:
-   - Run `flutterfire configure` in your command line, or
-   - Place your `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) in the respective platform folders.
-
-4. **Run the Application**:
-   ```bash
-   flutter run
-   ```
+ **APK file is generated**
